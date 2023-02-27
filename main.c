@@ -21,8 +21,14 @@ int s21_create_matrix(int rows, int columns, matrix_t *result){
             mat.matrix[i][j] = 0;
         }
     }
-	*result = mat;
 	return 0;
+}
+
+void remove_matrix(matrix_t *A) {
+    for (int i = 0; i < *A.rows; i++) {
+        free(mat.data[i]);
+    }
+    free(mat.data);
 }
 
 
